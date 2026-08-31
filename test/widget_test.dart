@@ -1,30 +1,60 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:tugas_pertama/main.dart';
+import 'package:tugas_pertama/models/user_model.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('menampilkan demo JSON serialization', (
+    WidgetTester tester,
+  ) async {
     await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('Tugas 2 - JSON Serialization'), findsOneWidget);
+    expect(find.text('JSON lengkap'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    await tester.drag(find.byType(ListView), const Offset(0, -400));
+    await tester.pumpAndSettle();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('JSON dengan data hilang'), findsOneWidget);
+    expect(find.text('Nama tidak tersedia'), findsOneWidget);
+  });
+
+  test('fromJson memakai nilai default ketika data API hilang', () {
+    final user = UserModel.fromJson(const {
+      'id': 2,
+      'name': null,
+      'email': 'mahasiswa@example.com',
+    });
+
+    expect(user.id, 2);
+    expect(user.name, 'Nama tidak tersedia');
+    expect(user.email, 'mahasiswa@example.com');
+    expect(user.age, 0);
+    expect(user.phoneNumber, isNull);
+    expect(user.address, isNull);
+    expect(user.isActive, isFalse);
+  });
+
+  test('toJson mengubah objek kembali menjadi map', () {
+    const user = UserModel(
+      id: 1,
+      name: 'Lux Starr',
+      email: 'lux@example.com',
+      age: 20,
+      phoneNumber: '081234567890',
+      address: 'Jakarta',
+      isActive: true,
+    );
+
+    expect(user.toJson(), {
+      'id': 1,
+      'name': 'Lux Starr',
+      'email': 'lux@example.com',
+      'age': 20,
+      'phone_number': '081234567890',
+      'address': 'Jakarta',
+      'is_active': true,
+    });
   });
 }
