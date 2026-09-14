@@ -67,12 +67,12 @@ class HeroBanner extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const StatChip(
-                    icon: Icons.auto_awesome_rounded,
-                    label: 'Pixel Perfect',
+                    icon: Icons.route_rounded,
+                    label: 'Navigator.push',
                   ),
                   const Spacer(),
                   Text(
-                    'Dashboard UI',
+                    'Katalog Flutter',
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.w800,
@@ -80,8 +80,8 @@ class HeroBanner extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Layout modular dengan Stack, Row, Column, dan '
-                    'ListView.builder.',
+                    'Pilih salah satu card untuk membuka detail katalog '
+                    'dengan Stack Navigation.',
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: Colors.white.withValues(alpha: 0.88),
                       height: 1.35,

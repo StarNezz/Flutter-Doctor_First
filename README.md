@@ -1,17 +1,54 @@
-# tugas_pertama
+# Tugas 4 Mobile Developer
 
-A new Flutter project.
+Project ini dibuat untuk latihan Routing dan Navigation di Flutter. Aplikasinya
+sederhana: halaman awal menampilkan beberapa katalog, lalu saat salah satu item
+diklik aplikasi akan pindah ke halaman detail.
 
-## Getting Started
+## Isi Aplikasi
 
-This project is a starting point for a Flutter application.
+Di halaman beranda ada 3 katalog yang ditampilkan dalam bentuk card. Setiap card
+bisa ditekan dan akan membuka halaman detail menggunakan `Navigator.push`.
 
-A few resources to get you started if this is your first Flutter project:
+Di halaman detail, data katalog ditampilkan lebih lengkap. Ada icon, nama katalog,
+harga, deskripsi singkat, dan tombol `Follow`. Tombol ini bisa berubah menjadi
+`Following`, jadi halaman detail dibuat sebagai `StatefulWidget`.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Cara Menjalankan
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Pertama ambil dependency Flutter:
+
+```bash
+flutter pub get
+```
+
+Lalu jalankan aplikasinya:
+
+```bash
+flutter run
+```
+
+Kalau mau dibuka lewat Chrome:
+
+```bash
+flutter run -d chrome
+```
+
+## Test
+
+Untuk menjalankan test:
+
+```bash
+flutter test
+```
+
+## Catatan Database
+
+Untuk tugas ini belum memakai database MySQL. Data katalog masih dibuat langsung
+di file `lib/data/catalog_items.dart`, jadi aplikasi bisa langsung dijalankan tanpa
+setup database.
+
+Kalau nanti perlu import database MySQL, biasanya perintahnya seperti ini:
+
+```bash
+mysql -u root -p nama_database < database.sql
+```

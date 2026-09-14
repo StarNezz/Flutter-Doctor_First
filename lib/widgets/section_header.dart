@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 class SectionHeader extends StatelessWidget {
-  const SectionHeader({super.key, required this.title, required this.subtitle});
+  const SectionHeader({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.countLabel,
+  });
 
   final String title;
   final String subtitle;
+  final String countLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +42,9 @@ class SectionHeader extends StatelessWidget {
             color: const Color(0xFFEFF6FF),
             borderRadius: BorderRadius.circular(16),
           ),
-          child: const Text(
-            '50 data',
-            style: TextStyle(
+          child: Text(
+            countLabel,
+            style: const TextStyle(
               color: Color(0xFF1D4ED8),
               fontSize: 12,
               fontWeight: FontWeight.w700,
