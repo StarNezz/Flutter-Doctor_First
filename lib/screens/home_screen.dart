@@ -13,9 +13,7 @@ class HomeScreen extends StatelessWidget {
   void _openDetail(BuildContext context, CatalogItem item) {
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (context) => CatalogDetailScreen(item: item),
-      ),
+      MaterialPageRoute(builder: (context) => CatalogDetailScreen(item: item)),
     );
   }
 
@@ -23,7 +21,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tugas 4 Mobile Dev'),
+        title: const Text('Tugas 5 Mobile Dev'),
         centerTitle: false,
       ),
       body: SafeArea(

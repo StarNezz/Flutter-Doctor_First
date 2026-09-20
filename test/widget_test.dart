@@ -12,7 +12,7 @@ void main() {
   ) async {
     await tester.pumpWidget(const MyApp());
 
-    expect(find.text('Tugas 4 Mobile Dev'), findsOneWidget);
+    expect(find.text('Tugas 5 Mobile Dev'), findsOneWidget);
     expect(find.byKey(const ValueKey('catalog-list')), findsOneWidget);
     expect(find.byType(CustomCard), findsNWidgets(3));
     expect(find.text('Flutter Starter Kit'), findsOneWidget);

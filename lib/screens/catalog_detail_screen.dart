@@ -49,10 +49,8 @@ class _CatalogDetailScreenState extends State<CatalogDetailScreen> {
               Text(
                 item.price,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: item.color,
-                  fontWeight: FontWeight.w800,
-                ),
+                style: Theme.of(context).textTheme.titleMedium
+                    ?.copyWith(color: item.color, fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: 24),
               Container(
@@ -63,10 +61,8 @@ class _CatalogDetailScreenState extends State<CatalogDetailScreen> {
                 ),
                 child: Text(
                   item.description,
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: const Color(0xFF374151),
-                    height: 1.45,
-                  ),
+                  style: Theme.of(context).textTheme.bodyLarge
+                      ?.copyWith(color: const Color(0xFF374151), height: 1.45),
                 ),
               ),
               const SizedBox(height: 24),

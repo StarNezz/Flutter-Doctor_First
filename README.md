@@ -1,4 +1,4 @@
-# Tugas 4 Mobile Developer
+# Tugas 5 Mobile Developer
 
 Project ini dibuat untuk latihan Routing dan Navigation di Flutter. Aplikasinya
 sederhana: halaman awal menampilkan beberapa katalog, lalu saat salah satu item
@@ -12,6 +12,15 @@ bisa ditekan dan akan membuka halaman detail menggunakan `Navigator.push`.
 Di halaman detail, data katalog ditampilkan lebih lengkap. Ada icon, nama katalog,
 harga, deskripsi singkat, dan tombol `Follow`. Tombol ini bisa berubah menjadi
 `Following`, jadi halaman detail dibuat sebagai `StatefulWidget`.
+
+## Struktur Utama
+
+- `lib/screens/home_screen.dart`: Screen 1 atau beranda katalog. File ini memakai
+  `StatelessWidget`, `ListView`, dan 3 card katalog.
+- `lib/screens/catalog_detail_screen.dart`: Screen 2 atau detail katalog. File ini
+  memakai `StatefulWidget`, `Column`, AppBar, icon kembali, data katalog, container
+  deskripsi pastel, dan perubahan state tombol.
+- `lib/data/catalog_items.dart`: Data dummy untuk 3 katalog yang tampil di beranda.
 
 ## Cara Menjalankan
 
